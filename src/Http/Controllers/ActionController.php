@@ -6,16 +6,16 @@ use Alexwenzel\DependencyContainer\ActionHasDependencies;
 use Alexwenzel\DependencyContainer\Http\Requests\ActionRequest;
 use Laravel\Nova\Http\Requests\ActionRequest as NovaActionRequest;
 use Laravel\Nova\Http\Controllers\ActionController as NovaActionController;
-
+use Illuminate\Http\Response;
 class ActionController extends NovaActionController
 {
     /**
      * create custom request from base Nova ActionRequest
      *
      * @param  \Laravel\Nova\Http\Requests\ActionRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function store(NovaActionRequest $request)
+    public function store(NovaActionRequest $request): mixed
     {
         $action = $request->action();
 
